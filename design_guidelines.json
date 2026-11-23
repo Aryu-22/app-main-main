@@ -1,0 +1,86 @@
+{
+  "app_identity": {
+    "name": "Delhi Crime Detection & Safety Intelligence",
+    "theme": "Tactical Command Dark & Precision Academic",
+    "vibe": "High-authority, urban intelligence interface with clear experimental-data context for Delhi NCT."
+  },
+  "typography": {
+    "heading_font": "Cabinet Grotesk / Chivo",
+    "body_font": "IBM Plex Sans / Inter",
+    "mono_font": "JetBrains Mono",
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-semibold",
+      "h4": "text-lg sm:text-xl font-medium",
+      "body": "text-sm sm:text-base leading-relaxed text-slate-300",
+      "caption_mono": "font-mono text-xs uppercase tracking-widest text-emerald-400/90"
+    }
+  },
+  "colors": {
+    "background_primary": "#0A0D14",
+    "background_secondary": "#111622",
+    "surface_card": "#161C2A",
+    "surface_border": "rgba(255, 255, 255, 0.08)",
+    "accent_primary": "#00E5FF",
+    "accent_safety_green": "#10B981",
+    "accent_warning_amber": "#F59E0B",
+    "accent_danger_red": "#EF4444",
+    "text_primary": "#F8FAFC",
+    "text_muted": "#94A3B8",
+    "map_tile_theme": "CartoDB Dark Matter / OpenStreetMap Dark",
+    "rules": "Never use pure #000000; use deep navy-tinted black (#0A0D14). Text contrast must strictly satisfy WCAG AA."
+  },
+  "layout_and_pages": {
+    "navigation": "Sticky top bar with glassmorphism (backdrop-blur-xl bg-#0A0D14/80 border-b border-white/10 z-50). Displays brand badge, live status ticker, and primary navigation tabs.",
+    "pages": [
+      {
+        "name": "Home / Landing Page",
+        "route": "/",
+        "features": "Hero banner with Delhi project summary, project abstract, college/academic banner (Department of CS/IT), key features grid, and team member showcase."
+      },
+      {
+        "name": "Live Safety Map & Tracking",
+        "route": "/map",
+        "features": "Split-screen layout with interactive Leaflet map, simulated live subject movement, real-time crime risk heatmap overlay, radius risk indicator, and quick alert trigger."
+      },
+      {
+        "name": "Crime Analytics Dashboard",
+        "route": "/analytics",
+        "features": "Interactive charts analyzing the synthetic Delhi dataset (crime types, hour-of-day distribution, day-of-week trends, and zone risk rankings) using Recharts."
+      },
+      {
+        "name": "Emergency Speed Dial",
+        "route": "/emergency",
+        "features": "Tactical speed dial grid with single-click call trigger for Police (100/112), Women Helpline (1090), Ambulance (108), Cyber Crime (1930), and Senior Citizen Helpline."
+      },
+      {
+        "name": "Police Stations Directory",
+        "route": "/police-stations",
+        "features": "Delhi NCT police stations directory, distance calculation from the selected location, Superintendent/SHO in-charge details, and direct map focus."
+      },
+      {
+        "name": "Methodology & Research",
+        "route": "/about",
+        "features": "Academic breakdown of K-Means Spatial Clustering, dataset schema analysis, tech stack specification, and project references."
+      }
+    ]
+  },
+  "component_design_guidelines": {
+    "speed_dial": "High-visibility tactical cards with pulse animation, distinct color codes per service (Red for Police/Fire, Pink/Purple for Women Safety, Cyan for Cyber, Green for Medical), and prominent phone action buttons.",
+    "police_cards": "Compact cardless or crisp-bordered tiles with SP/SHO name badge, contact number, distance indicator badge (e.g., '1.8 km away'), and interactive 'View on Map' button.",
+    "charts": "Recharts with dark slate tooltips, glow filters on line graphs, custom amber/red gradient bars for high-crime hours, and crisp legends.",
+    "map_controls": "Floating tactical widget panel on map with layer toggles (Heatmap, Subject Marker, Nearest Stations, Risk Clusters) and simulated GPS movement toggle."
+  },
+  "media_assets": {
+    "control_room": "https://images.pexels.com/photos/30481728/pexels-photo-30481728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "city_aerial": "https://images.pexels.com/photos/12534264/pexels-photo-12534264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "universal_guidelines_for_main_agent": {
+    "data_test_id": "All interactive buttons, links, search inputs, tabs, map controls, and speed-dial cards MUST include a descriptive `data-testid` attribute (e.g. data-testid=\"nav-live-map-button\", data-testid=\"speed-dial-police-100\").",
+    "icons": "Use lucide-react icons exclusively. Avoid AI emojis as primary icons.",
+    "toasts": "Use sonner for notifications (e.g., when triggering emergency alert or copying helpline number).",
+    "responsive": "Ensure seamless mobile and desktop navigation. Mobile navigation should feature a crisp sheet/drawer or bottom action bar.",
+    "academic_touch": "Include subtle academic metadata such as 'Delhi NCT Crime Study', 'Experimental Spatial Clustering Model', and 'Department of Computer Science & Engineering'."
+  }
+}

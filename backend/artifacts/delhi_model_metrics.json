@@ -1,0 +1,242 @@
+{
+  "dataset": "Delhi_dataset.csv",
+  "dataset_is_synthetic": true,
+  "prediction_target": "at least one recorded crime in a grid-cell hourly interval",
+  "zero_label_semantics": "Crime_Count=0 means no record was present in that synthetic interval; it is not a verified crime-free observation.",
+  "geographical_grid_size_degrees": 0.02,
+  "available_cells": 136,
+  "hourly_intervals_per_cell": 17520,
+  "complete_grid_intervals": 2382720,
+  "positive_recorded_crime_intervals": 46593,
+  "zero_recorded_crime_intervals": 2336127,
+  "training_negative_sampling_ratio": 5,
+  "chronological_split": {
+    "training": 0.7,
+    "validation_calibration": 0.15,
+    "test": 0.15
+  },
+  "training_period": {
+    "start": "2024-01-01T00:00:00",
+    "end": "2025-12-30T23:00:00"
+  },
+  "chronological_windows": {
+    "train": {
+      "start": "2024-01-01T00:00:00",
+      "end": "2025-05-25T23:00:00"
+    },
+    "validation_calibration": {
+      "start": "2025-05-26T00:00:00",
+      "end": "2025-09-12T11:00:00"
+    },
+    "test": {
+      "start": "2025-09-12T12:00:00",
+      "end": "2025-12-30T23:00:00"
+    }
+  },
+  "library_versions": {
+    "scikit_learn": "1.5.1",
+    "xgboost": "3.2.0"
+  },
+  "selected_model": "xgboost",
+  "risk_probability_thresholds": {
+    "low_medium": 0.00188912832965187,
+    "medium_high": 0.024690449434998648
+  },
+  "deployment_ready": true,
+  "validation_reasons": [],
+  "models": {
+    "random_forest": {
+      "validation": {
+        "intervals": 357408,
+        "positive_intervals": 6838,
+        "zero_recorded_crime_intervals": 350570,
+        "prevalence": 0.019132196257498433,
+        "precision": 0.06517874777799723,
+        "recall": 0.4825972506580872,
+        "f1": 0.11484652328252244,
+        "roc_auc": 0.8192661257228158,
+        "precision_recall_auc": 0.06329854917857092,
+        "brier_score": 0.01823247270476338,
+        "constant_prevalence_brier_baseline": 0.018766155323862995,
+        "expected_calibration_error": 0.0003535232832004419,
+        "calibration_bins": [
+          {
+            "lower_probability": 0.0,
+            "upper_probability": 0.1,
+            "count": 355487,
+            "mean_predicted": 0.018522823127816362,
+            "observed_rate": 0.01873767535802997
+          },
+          {
+            "lower_probability": 0.1,
+            "upper_probability": 0.2,
+            "count": 1916,
+            "mean_predicted": 0.11792535032965236,
+            "observed_rate": 0.0918580375782881
+          },
+          {
+            "lower_probability": 0.2,
+            "upper_probability": 0.30000000000000004,
+            "count": 5,
+            "mean_predicted": 0.20598072170904666,
+            "observed_rate": 0.2
+          }
+        ],
+        "classification_threshold_from_validation": 0.04867010332777698
+      },
+      "test": {
+        "intervals": 357408,
+        "positive_intervals": 6955,
+        "zero_recorded_crime_intervals": 350453,
+        "prevalence": 0.01945955322768377,
+        "precision": 0.06564480415362296,
+        "recall": 0.49446441409058234,
+        "f1": 0.11590246532868241,
+        "roc_auc": 0.8177289917931689,
+        "precision_recall_auc": 0.06514547195927335,
+        "brier_score": 0.018527911683850755,
+        "constant_prevalence_brier_baseline": 0.01908087901586271,
+        "expected_calibration_error": 0.00027870236022802604,
+        "calibration_bins": [
+          {
+            "lower_probability": 0.0,
+            "upper_probability": 0.1,
+            "count": 355098,
+            "mean_predicted": 0.019118132987037923,
+            "observed_rate": 0.018918721029124355
+          },
+          {
+            "lower_probability": 0.1,
+            "upper_probability": 0.2,
+            "count": 2310,
+            "mean_predicted": 0.11506479036068666,
+            "observed_rate": 0.1025974025974026
+          }
+        ],
+        "classification_threshold_from_validation": 0.04867010332777698
+      }
+    },
+    "xgboost": {
+      "validation": {
+        "intervals": 357408,
+        "positive_intervals": 6838,
+        "zero_recorded_crime_intervals": 350570,
+        "prevalence": 0.019132196257498433,
+        "precision": 0.06591317854807063,
+        "recall": 0.4716291313249488,
+        "f1": 0.11566187282573612,
+        "roc_auc": 0.8202760203345101,
+        "precision_recall_auc": 0.06302351544203734,
+        "brier_score": 0.018226157913455738,
+        "constant_prevalence_brier_baseline": 0.018766155323862995,
+        "expected_calibration_error": 0.00017525923432376976,
+        "calibration_bins": [
+          {
+            "lower_probability": 0.0,
+            "upper_probability": 0.1,
+            "count": 355469,
+            "mean_predicted": 0.018545746641653774,
+            "observed_rate": 0.01867110774779235
+          },
+          {
+            "lower_probability": 0.1,
+            "upper_probability": 0.2,
+            "count": 1939,
+            "mean_predicted": 0.11298456182734178,
+            "observed_rate": 0.10366168127900979
+          }
+        ],
+        "classification_threshold_from_validation": 0.05046256249614119
+      },
+      "test": {
+        "intervals": 357408,
+        "positive_intervals": 6955,
+        "zero_recorded_crime_intervals": 350453,
+        "prevalence": 0.01945955322768377,
+        "precision": 0.06625907825308125,
+        "recall": 0.4892882818116463,
+        "f1": 0.11671296772644647,
+        "roc_auc": 0.8184264189988316,
+        "precision_recall_auc": 0.06586615656052028,
+        "brier_score": 0.018521165401103303,
+        "constant_prevalence_brier_baseline": 0.01908087901586271,
+        "expected_calibration_error": 0.0002051918688469226,
+        "calibration_bins": [
+          {
+            "lower_probability": 0.0,
+            "upper_probability": 0.1,
+            "count": 355671,
+            "mean_predicted": 0.018808976241487085,
+            "observed_rate": 0.01894447396610913
+          },
+          {
+            "lower_probability": 0.1,
+            "upper_probability": 0.2,
+            "count": 1737,
+            "mean_predicted": 0.11045215644974458,
+            "observed_rate": 0.12492803684513529
+          }
+        ],
+        "classification_threshold_from_validation": 0.05046256249614119
+      }
+    }
+  },
+  "geographical_holdout": {
+    "status": "ok",
+    "heldout_cells": 27,
+    "heldout_cell_ids": [
+      "1425:3863",
+      "1425:3865",
+      "1426:3860",
+      "1427:3857",
+      "1427:3858",
+      "1429:3860",
+      "1429:3861",
+      "1430:3848",
+      "1430:3853",
+      "1430:3860",
+      "1430:3861",
+      "1430:3862",
+      "1431:3854",
+      "1431:3865",
+      "1432:3859",
+      "1432:3860",
+      "1432:3862",
+      "1432:3863",
+      "1433:3851",
+      "1433:3860",
+      "1434:3850",
+      "1434:3855",
+      "1434:3863",
+      "1434:3865",
+      "1435:3856",
+      "1437:3851",
+      "1437:3852"
+    ],
+    "train_cells": 109,
+    "metrics": {
+      "intervals": 70956,
+      "positive_intervals": 1863,
+      "zero_recorded_crime_intervals": 69093,
+      "prevalence": 0.026255707762557076,
+      "precision": 0.07937519923493784,
+      "recall": 0.40096618357487923,
+      "f1": 0.13251729643427354,
+      "roc_auc": 0.777097764385325,
+      "precision_recall_auc": 0.06620470523344102,
+      "brier_score": 0.02496516312213079,
+      "constant_prevalence_brier_baseline": 0.025566345572444277,
+      "expected_calibration_error": 0.005530858973366776,
+      "calibration_bins": [
+        {
+          "lower_probability": 0.0,
+          "upper_probability": 0.1,
+          "count": 70956,
+          "mean_predicted": 0.0207248487891903,
+          "observed_rate": 0.026255707762557076
+        }
+      ],
+      "classification_threshold_from_validation": 0.04775691514328519
+    }
+  }
+}
